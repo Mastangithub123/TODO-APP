@@ -13,7 +13,7 @@ jobs:
             version="build-$CIRCLE_BUILD_NUM"
             echo $version
             docker build -t mastanimages/todo-app:$version .
-            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME -p $DOCKER_ACCESS_TOKEN
             docker push mastanimages/todo-app:$version
 
   Update_manifest:
