@@ -12,9 +12,9 @@ jobs:
           command: |
             version="build-$CIRCLE_BUILD_NUM"
             echo $version
-            docker build -t mastanhub/todo-app:$version .
+            docker build -t mastanimages/todo-app:$version .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-            docker push mastanhub/todo-app:$version
+            docker push mastanimages/todo-app:$version
 
   Update_manifest:
     docker:
